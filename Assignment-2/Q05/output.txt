@@ -1,0 +1,18 @@
+﻿==========================================================================
+  Q5: GENERIC RANKING COMPONENT & COMPARISON TRANSITIVITY PRINCIPLE
+==========================================================================
+
+1. Generic Leaderboard Reused for Quiz Teams:
+   [Harvard(Score:95, Time:90s), Stanford(Score:95, Time:90s), MIT(Score:95, Time:120s), Oxford(Score:88, Time:70s)]
+
+2. Faulty Comparator Analysis: The Integer Subtraction Overflow Bug
+   Score A: 2,147,483,637 | Score B: -50
+   Naive (scoreB - scoreA) evaluates to: 2,147,483,609 (POSITIVE due to 32-bit overflow!)
+   Result: Naive subtraction falsely declares Score B ranked HIGHER than Score A!
+   Correct Fix: Integer.compare(scoreB, scoreA) or Comparator.comparingInt()
+
+3. Principle Consistency Verification:
+   Principle: If A ranks above B, and B ranks above C, then A MUST rank above C.
+   comp(Eagles, Bisons) < 0: true
+   comp(Bisons, Cobras) < 0: true
+   comp(Eagles, Cobras) < 0: true [Transitivity Upheld: true]
