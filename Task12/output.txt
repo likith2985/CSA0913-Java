@@ -1,0 +1,28 @@
+﻿==========================================================================
+  TASK 12: DAY-4 DESIGN CHALLENGE - ADAPTED SMART-PARKING SYSTEM
+==========================================================================
+
+--- 1. Facility Extension Verification (5 Floors) ---
+Total Facility Floors: 5
+  Floor 0 Capacity: 25 slots
+  Floor 1 Capacity: 40 slots
+  Floor 2 Capacity: 50 slots
+  Floor 3 Capacity: 35 slots
+  Floor 4 Capacity: 20 slots
+Total Facility Capacity: 170 slots
+
+--- 2. New Category: E-Bike Testing ---
+E-Bike (45 mins stay) Fee:  Rs 20.00 (Expected: Rs 20.00 - Flat)
+E-Bike (7 hrs stay) Fee:   Rs 20.00 (Expected: Rs 20.00 - Flat)
+E-Bike 5 kWh Charging Fee: Rs 40.00 (Expected: Rs 40.00)
+
+--- 3. New Category: Delivery Van Testing (Peak vs Off-Peak) ---
+Delivery Van [Peak 10AM-12PM] (2 hrs):     Rs 120.00 (Expected: Rs 120.00)
+Delivery Van [Off-Peak 6AM-8AM] (2 hrs):   Rs 60.00 (Expected: Rs 60.00)
+
+--- 4. Visitor One-Day Pass Testing ---
+Visitor Car (10 hrs) WITHOUT Pass: Rs 300.00 (Expected: Rs 300.00)
+Visitor Car (10 hrs) WITH One-Day Pass: Rs 100.00 (Expected: Rs 100.00)
+
+Adaptation Result: Successfully adapted the design to support new categories,
+peak tariff surcharges, one-day passes, and 5-floor non-uniform layout with 0 regressions!
