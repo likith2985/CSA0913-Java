@@ -1,0 +1,19 @@
+﻿=== TASK 6: INHERITANCE HIERARCHY & CONSTRUCTOR TRACE ===
+
+Instantiating TwoWheeler('TN-01-BIKE-1'):
+  -> [1] Vehicle constructor executing: regNo = TN-01-BIKE-1
+  -> [2] TwoWheeler constructor executing
+
+Instantiating Car('TN-02-CAR-2'):
+  -> [1] Vehicle constructor executing: regNo = TN-02-CAR-2
+  -> [2] Car constructor executing
+
+Instantiating ElectricCar('TN-03-EVCAR-3'):
+  -> [1] Vehicle constructor executing: regNo = TN-03-EVCAR-3
+  -> [2] Car constructor executing
+  -> [3] ElectricCar constructor executing: battery = 60.0 kWh
+
+Verifying Inheritance & Polymorphic Rates:
+Bike (TN-01-BIKE-1) Rate: Rs 10.0/hr
+Car (TN-02-CAR-2) Rate: Rs 30.0/hr
+EV Car (TN-03-EVCAR-3) Rate: Rs 30.0/hr, Charging 10 kWh: Rs 120.0
