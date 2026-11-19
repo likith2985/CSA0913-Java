@@ -1,0 +1,29 @@
+﻿===================================================================
+   TASK 11: FULL CAMPUS SMART-PARKING SYSTEM TEST & DEFENCE
+===================================================================
+
+TC_ID  | Test Scenario Description        | Expected Result  | Actual Result    | Status
+----------------------------------------------------------------------------------------
+TC-01  | Normal Entry: Car in [0,0]       | Slot [0,0]       | Slot [0,0]       | PASS
+TC-02  | Multi-type Entry: Bike & EV      | Allocated        | Allocated        | PASS
+TC-03  | Boundary: Last Free Slot         | Slot Allocated (0 free) | Slot [1,1] (0 free) | PASS
+TC-04  | Boundary: Facility Full Rejection | null (Rejected)  | null             | PASS
+TC-05  | Invalid Case: Duplicate RegNo    | Exception Thrown | IllegalStateException | PASS
+TC-06  | Boundary: Zero-minute Stay       | Fee = Rs 0.0     | Fee = Rs 0.0     | PASS
+TC-07  | Boundary: 60 min vs 61 min       | Rs 30.0 / Rs 60.0 | Rs 30.0 / Rs 60.0 | PASS
+
+-------------------------------------------------------------------
+   HAND-CALCULATED RECONCILIATION SCENARIO
+-------------------------------------------------------------------
+Hand-Calculated Revenue: Rs 250.00
+Actual Program Revenue:  Rs 250.00
+Reconciliation Status:   PASSED (100%% MATCH)
+
+-------------------------------------------------------------------
+   EXIT SEARCH COMPLEXITY BENCHMARK (Array vs List vs HashMap)
+-------------------------------------------------------------------
+Dataset: 5000 active parked vehicles
+1. Array Linear Scan [O(N)]    :   695900 ns (Found: true)
+2. ArrayList Scan    [O(N)]    :  1017200 ns (Found: true)
+3. HashMap Hash Lookup [O(1)]  :    15100 ns (Found: true)
+Speedup (HashMap vs Array Scan): 46.09x faster
