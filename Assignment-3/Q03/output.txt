@@ -1,0 +1,29 @@
+﻿==========================================================================
+  Q3: RESOURCE SAFETY - MANUAL FINALLY vs TRY-WITH-RESOURCES
+==========================================================================
+
+
+--- Executing Report Generation (Manual try-finally) ---
+    [RESOURCE OPENED] store1.csv | Active Open Handles: 1
+    [RESOURCE CLOSED] store1.csv | Active Open Handles: 0
+    [RESOURCE OPENED] store2.csv | Active Open Handles: 1
+    [RESOURCE CLOSED] store2.csv | Active Open Handles: 0
+    [RESOURCE OPENED] store3_corrupt.csv | Active Open Handles: 1
+  [ERROR in Manual Processing]: For input string: "CORRUPT_DATA"
+>> LEAK DETECTED: Manual version left 1 open file handles! [RESOURCE LEAK]
+
+--- Executing Report Generation (Try-With-Resources) ---
+    [RESOURCE OPENED] store1.csv | Active Open Handles: 1
+    [RESOURCE CLOSED] store1.csv | Active Open Handles: 0
+    [RESOURCE OPENED] store2.csv | Active Open Handles: 1
+    [RESOURCE CLOSED] store2.csv | Active Open Handles: 0
+    [RESOURCE OPENED] store3_corrupt.csv | Active Open Handles: 1
+    [RESOURCE CLOSED] store3_corrupt.csv | Active Open Handles: 0
+  [HANDLED ERROR in file store3_corrupt.csv]: For input string: "CORRUPT_DATA" (File handle safely auto-closed!)
+    [RESOURCE OPENED] store4.csv | Active Open Handles: 1
+    [RESOURCE CLOSED] store4.csv | Active Open Handles: 0
+>> RESOURCE SAFETY: Try-With-Resources left 0 open file handles! [PERFECT ZERO]
+
+--- Demonstrating Suppressed Exceptions in Try-With-Resources ---
+Caught Primary Exception: Primary error during work in ResA
+  -> Discovered Suppressed Exception: Secondary error during close() in ResA
