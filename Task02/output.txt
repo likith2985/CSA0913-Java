@@ -1,0 +1,17 @@
+﻿=== TASK 2: DATA REPRESENTATION & TYPE CONVERSION RISKS ===
+
+--- 1. Precision & Integer Division Pitfall ---
+Parked Time: 65 minutes
+Buggy Integer Division [minutes / 60]: 1 hr -> Fee = Rs 30.00 [WRONG UNDERBILLING]
+Correct Integer Arithmetic [(minutes + 59) / 60]: 2 hr -> Fee = Rs 60.00 [CORRECT]
+Correct Math.ceil [(int)Math.ceil(minutes / 60.0)]: 2 hr -> Fee = Rs 60.00 [CORRECT]
+
+--- 2. Jagged Array vs 1D Flattened Array vs ArrayList ---
+Jagged Array Slot (Floor 1, Slot 2): TN01AB1111
+Flattened 1D Array Slot at index 4 (prefixSum[1] + 2): TN01AB1111
+ArrayList Slot (list.get(1)[2]): TN01AB1111
+
+Representation Summary:
+- Jagged Array provides natural 2D indexing slots[f][s] while supporting uneven floor capacities.
+- Flattened 1D requires prefix sum lookup tables when floors vary in slot count.
+- Integer ceiling formula ((minutes + 59) / 60) avoids floating-point overhead and guarantees exact integer billing.
