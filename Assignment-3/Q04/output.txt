@@ -1,0 +1,29 @@
+﻿==========================================================================
+  Q4: PARALLEL ANSWER-SCRIPT SCANNING - THREAD LIFE CYCLE & EXPERIMENTS
+==========================================================================
+
+--- 1. Extending Thread vs Implementing Runnable ---
+State before start(): s1 state = NEW | isAlive = false
+State immediately after start(): s1 state = RUNNABLE | isAlive = true
+  [Thread] Station 1 finished scanning 10 scripts on [ScannerStation-Thread-1]
+  [Runnable] Station 4 completed batch on [ScannerStation-Runnable-4]
+  [Thread] Station 2 finished scanning 10 scripts on [ScannerStation-Thread-2]
+  [Runnable] Station 3 completed batch on [ScannerStation-Runnable-3]
+State after join(): s1 state = TERMINATED | isAlive = false
+Grand Total Scripts Scanned across all stations: 40 (Expected: 40)
+
+--- 2. Direct run() Call vs start() Proof ---
+Invoking directRunThread.run() on calling thread:
+  [Thread] Station 99 finished scanning 5 scripts on [main]
+Notice: Thread name printed was [main], NOT a new worker thread!
+
+--- 3. Recording Output Finishing Orders over 5 Concurrent Runs ---
+  Run #1 Completion Order: [Station_1, Station_2, Station_3, Station_4]
+  Run #2 Completion Order: [Station_4, Station_1, Station_3, Station_2]
+  Run #3 Completion Order: [Station_4, Station_3, Station_1, Station_2]
+  Run #4 Completion Order: [Station_2, Station_1, Station_3, Station_4]
+  Run #5 Completion Order: [Station_3, Station_1, Station_4, Station_2]
+
+--- 4. Daemon Thread Behavior Demonstration ---
+  Main thread reached end of method. Daemon thread will be terminated automatically by JVM.
+  [Daemon Station] Background scanner started...
