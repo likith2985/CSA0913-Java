@@ -1,0 +1,27 @@
+﻿==========================================================================
+   Q3 INVESTIGATION: THE HASHCODE-EQUALS CONTRACT UNDER SCRUTINY
+==========================================================================
+
+--- Test 1: Where Broken Student Appears to Work ---
+Prediction: Size = 1 (Reference equality bypasses bucket check)
+Observed Set Size: 1
+Result: Looks deceptively correct because s1 == s1 is true.
+
+--- Test 2: Deliberately Exposing Duplicate Failure ---
+Prediction: Size = 3 (Different System.identityHashCode lands in different buckets; equals() never called!)
+Observed Set Size: 3 [DUPLICATES RETAINED - CONTRACT BROKEN!]
+Set Contents: [192311002:Divya, 192311001:Arun, 192311001:Arun]
+
+--- Test 3: Mutating regNo After Insertion (Key Corruption) ---
+Inserted student with regNo='192311001'. Set contains: true
+Mutated regNo to '192311999'.
+test3Set.contains(mut): false (FAIL: Cannot locate in new hash bucket!)
+test3Set.remove(mut): false (FAIL: Cannot remove ghost element!)
+Set size remains: 1 (Ghost object permanently leaked in old bucket!)
+
+--- Test 4: Corrected Student Class Verification ---
+Observed Set Size: 2 [CORRECT: Exactly 2 unique students]
+
+--- Alternative Concepts Comparison ---
+TreeSet with Comparator size: 2 (Orders by regNo, O(log N) lookup)
+HashMap<String, Student> size: 2 (Keyed by String, O(1) average)
