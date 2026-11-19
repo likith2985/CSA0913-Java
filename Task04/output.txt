@@ -1,0 +1,17 @@
+﻿=== TASK 4: CLASSES, OBJECTS AND CONSTRUCTORS ===
+1. Ticket created via Overloaded Chained Constructor:
+   Ticket[ID=TKT-1001, RegNo=TN-01-AA-1111, Slot=[0,1], Entry=2026-11-19T13:41:53.664468200, Pass=false]
+
+2. Ticket created via Full Parameterized Constructor:
+   Ticket[ID=TKT-1002, RegNo=TN-02-BB-2222, Slot=[1,0], Entry=2026-11-19T10:00, Pass=true]
+
+3. Duplicate Ticket re-issued via Copy Constructor:
+   Ticket[ID=TKT-1001-DUP, RegNo=TN-01-AA-1111, Slot=[0,1], Entry=2026-11-19T13:41:53.664468200, Pass=false]
+
+4. Ticket created via Static Factory Method:
+   Ticket[ID=TKT-1003, RegNo=KA-05-EV-3333, Slot=[2,5], Entry=2026-11-19T13:41:53.680807, Pass=true]
+
+Memory Model Demonstration:
+Stack: Stores reference variables (t1, t2, t1Duplicate, t3) holding memory addresses.
+Heap:  Stores the actual ParkingTicket objects and their fields.
+t1 == t1Duplicate: false (Distinct Heap Objects)
