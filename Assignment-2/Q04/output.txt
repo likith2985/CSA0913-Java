@@ -1,0 +1,70 @@
+﻿==========================================================================
+  Q4 BENCHMARK: MAP SELECTION FOR HOSPITAL PHARMACY INVENTORY
+==========================================================================
+
+==========================================================================
+  DATASET SIZE: 500 Medicines | Lookups: 100,000
+==========================================================================
+1. Time for 100,000 Lookups:
+   HashMap       :    11.76 ms (Avg: 117.61 ns/op) [O(1)]
+   LinkedHashMap :     9.09 ms (Avg:  90.86 ns/op) [O(1)]
+   TreeMap       :    21.10 ms (Avg: 211.00 ns/op) [O(log N)]
+
+2. Report 1 Generation: Code Order (Alphabetical):
+   TreeMap       :    0.359 ms [NATIVELY SORTED - 0 extra sorting]
+   HashMap       :    0.714 ms [Requires Collections.sort() O(N log N)]
+   LinkedHashMap :    0.621 ms [Requires Collections.sort() O(N log N)]
+
+3. Report 2 Generation: Insertion Order (Chronological):
+   LinkedHashMap :    0.037 ms [NATIVELY PRESERVES INSERTION ORDER]
+   HashMap       : CANNOT produce insertion order (Bucket order is arbitrary)
+   TreeMap       : CANNOT produce insertion order (Keys always sorted by code)
+
+Order Validation:
+   TreeMap matches Code Order: true
+   LinkedHashMap matches Insertion Order: true
+
+==========================================================================
+  DATASET SIZE: 5,000 Medicines | Lookups: 100,000
+==========================================================================
+1. Time for 100,000 Lookups:
+   HashMap       :     2.46 ms (Avg:  24.58 ns/op) [O(1)]
+   LinkedHashMap :     2.23 ms (Avg:  22.29 ns/op) [O(1)]
+   TreeMap       :    26.03 ms (Avg: 260.31 ns/op) [O(log N)]
+
+2. Report 1 Generation: Code Order (Alphabetical):
+   TreeMap       :    1.432 ms [NATIVELY SORTED - 0 extra sorting]
+   HashMap       :    3.333 ms [Requires Collections.sort() O(N log N)]
+   LinkedHashMap :    3.100 ms [Requires Collections.sort() O(N log N)]
+
+3. Report 2 Generation: Insertion Order (Chronological):
+   LinkedHashMap :    0.157 ms [NATIVELY PRESERVES INSERTION ORDER]
+   HashMap       : CANNOT produce insertion order (Bucket order is arbitrary)
+   TreeMap       : CANNOT produce insertion order (Keys always sorted by code)
+
+Order Validation:
+   TreeMap matches Code Order: true
+   LinkedHashMap matches Insertion Order: true
+
+==========================================================================
+  DATASET SIZE: 50,000 Medicines | Lookups: 100,000
+==========================================================================
+1. Time for 100,000 Lookups:
+   HashMap       :     5.25 ms (Avg:  52.47 ns/op) [O(1)]
+   LinkedHashMap :     7.98 ms (Avg:  79.76 ns/op) [O(1)]
+   TreeMap       :    92.77 ms (Avg: 927.73 ns/op) [O(log N)]
+
+2. Report 1 Generation: Code Order (Alphabetical):
+   TreeMap       :   16.274 ms [NATIVELY SORTED - 0 extra sorting]
+   HashMap       :   33.983 ms [Requires Collections.sort() O(N log N)]
+   LinkedHashMap :   34.895 ms [Requires Collections.sort() O(N log N)]
+
+3. Report 2 Generation: Insertion Order (Chronological):
+   LinkedHashMap :   15.860 ms [NATIVELY PRESERVES INSERTION ORDER]
+   HashMap       : CANNOT produce insertion order (Bucket order is arbitrary)
+   TreeMap       : CANNOT produce insertion order (Keys always sorted by code)
+
+Order Validation:
+   TreeMap matches Code Order: true
+   LinkedHashMap matches Insertion Order: true
+
