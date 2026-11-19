@@ -1,0 +1,10 @@
+﻿=== TASK 9: ABSTRACTION WITH ABSTRACT CLASSES & INTERFACES ===
+Vehicle Registration: TN-09-EV-9999
+Hourly Parking Rate: Rs 30.0
+Parking Fee (90 mins): Rs 60.0
+Charging Fee (15 kWh): Rs 180.0
+Estimated Charging Time (via default method): 127.5 minutes
+Green Discount Applicable (via static method): 5.0%
+
+Invoking multiple interface capability (Payable):
+  [Payment Gateway] Processing Rs 240.00 for EV TN-09-EV-9999 via Campus UPI/Card
