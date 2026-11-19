@@ -1,0 +1,13 @@
+﻿==========================================================================
+  Q6: DEADLOCK PREVENTION & PRODUCER-CONSUMER INTER-THREAD COMMUNICATION
+==========================================================================
+
+--- 1. Part A: Deadlock-Free Wallet Transfer via Lock Ordering ---
+  [TransferThread-1] SAFE Transfer completed: 101 -> 102 (Rs 200.00)
+  [TransferThread-2] SAFE Transfer completed: 102 -> 101 (Rs 150.00)
+Safe transfer finished successfully without circular wait deadlock!
+
+--- 2. Part B: Mess Token Counter Coordination Verification ---
+Total tokens consumed sum: 465 (Expected: 465)
+Counter Bounds Audit: Min Observed = 0 | Max Observed = 5 (Capacity = 5)
+Bounds Invariant (0 <= count <= 5) Upheld: true
