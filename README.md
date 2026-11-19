@@ -58,3 +58,18 @@
 * 📁 **[Task04](Assignment-4/Task04/)**: Event-Handling Forensics & Drawing Persistence (`DrawPad.java` Complete the Code, typo fix, retained mode rendering inside `paint()`).
 * 📁 **[Task05](Assignment-4/Task05/)**: Four Event-Handling Styles & Converter Completion (`Converter.java` Complete the Code with Style (d) Lambda, Enter-key triggering, `JOptionPane` dialog).
 * 📁 **[Task06](Assignment-4/Task06/)**: Full-Stack Campus Event Registration Desktop Application (`EventRegistrationApp.java`, `RegistrationDAO.java`, `schema.sql`, menu bar, filterable `JTable`, async persistence, CSV export).
+
+
+---
+
+### 📁 [Assignment-5/](Assignment-5/)
+**Title:** Data Persistence Engineering – Files and Databases  
+**CO Coverage:** CO5 — Java I/O (byte, character, and buffered streams, the File class, serialization); JDBC (architecture and drivers, Statement, PreparedStatement, CallableStatement, transactions, batch processing, and metadata).  
+**Total Marks:** 50  
+**Status:** Completed & Validated (Part A: A1–A5, Part B: B1–B4)  
+* 📄 **[Assignment5_Report.md](Assignment-5/Assignment5_Report.md)**: Formal 50-mark submission report covering record formats, SIMATS algorithmic pseudocode, buffering speedups, transient object graph serialization, ACID wallet transactions, and multi-campus scaling.
+* 📁 **[PartA/](Assignment-5/PartA/)**: Persistence Design & Pseudocode (`PartA_Design.md` covering Tasks A1 to A5).
+* 📁 **[TaskB1](Assignment-5/TaskB1/)**: Instrumented File Store (`PassStore.java` Complete the Code, empirical buffering benchmarks measuring 1,269x speedup, search growth measurements).
+* 📁 **[TaskB2](Assignment-5/TaskB2/)**: Adversarial Inputs & Exploitation Defence (`LoginSecurityDemo.java`, SQL comment/tautology injection neutralization, damaged CSV fault-tolerance).
+* 📁 **[TaskB3](Assignment-5/TaskB3/)**: Statement vs PreparedStatement vs Batch (`PassLoader.java` Complete the Code, scaling across 1K, 10K, and 100K records, auto-commit vs transaction rollback).
+* 📁 **[TaskB4](Assignment-5/TaskB4/)**: 12-Campus Migration Strategy & Production Decision (`CampusMigrationEngine.java` batch migration with error audit, `DatabaseInspector.java` `DatabaseMetaData` inspection, multi-campus architectural evaluation).
