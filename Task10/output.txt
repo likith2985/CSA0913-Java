@@ -1,0 +1,11 @@
+﻿=== TASK 10: PACKAGES, ACCESS MODIFIERS & ENCAPSULATION ===
+Successfully allocated slot: Slot[F0-S0, occupied=true, vehicle=KA01-1111]
+
+--- Testing Data Validation & Defensive Invariants ---
+Encapsulation Protected: Caught expected exception -> Slot [0,0] is already occupied!
+Encapsulation Protected: Caught expected exception -> Duration cannot be negative: -45
+
+--- Autoboxing & Wrapper Class Trap (Integer == Integer) ---
+Comparing Integer(100) == Integer(100): true (Cached [-128..127])
+Comparing Integer(300) == Integer(300): false (FAIL: Outside cache range!)
+Comparing with .equals(): true (ALWAYS CORRECT)
