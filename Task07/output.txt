@@ -1,0 +1,15 @@
+﻿=== TASK 7: METHOD OVERRIDING & EQUALITY CONTRACT ===
+
+--- 1. toString() Specialization ---
+v1: Car[regNo=KA01-1234, rate=Rs 30.00/hr]
+v2: Car[regNo=KA01-1234, rate=Rs 30.00/hr]
+v3: TwoWheeler[regNo=TN02-5678, rate=Rs 10.00/hr]
+
+--- 2. equals() and hashCode() Contract ---
+v1.equals(v2): true (Expected: true)
+v1.hashCode() == v2.hashCode(): true (Expected: true)
+HashSet size after adding duplicate regNo: 2 (Expected: 2)
+
+--- 3. Fee Calculation Comparison ---
+Polymorphic Car Fee (125 mins): Rs 90.0
+Switch-based Car Fee (125 mins): Rs 90.0
