@@ -1,0 +1,12 @@
+﻿=== TASK 1: OBJECT-ORIENTED MODELING VS PARALLEL ARRAYS ===
+
+--- Approach 1: Parallel Arrays ---
+Found in parallel arrays at index 1: RegNo=TN-02-CD-5678, Type=TwoWheeler, Time=2026-11-19T09:15:00
+
+--- Approach 2: Object-Oriented Design ---
+Found in OO model: VehicleRecord[RegNo=TN-02-CD-5678, Type=TwoWheeler, EntryTime=2026-11-19T09:15, EV=false]
+
+Comparison Summary:
+1. Cohesion: OO encapsulates all attributes in one cohesive entity, preventing index misalignment.
+2. Extensibility: Adding attribute 'isEv' only updates VehicleRecord class, whereas Parallel Arrays requires introducing a whole new array bool[] isEv across all methods.
+3. Type-safety: Parallel arrays rely on loose string parsing; OO enforces strong typing (LocalDateTime, boolean).
