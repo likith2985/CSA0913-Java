@@ -1,0 +1,25 @@
+﻿=== TASK 5: STATIC MEMBERS AND OBJECT LIFE CYCLE ===
+
+--- 1. Shared Static Sequence Counter ---
+[Static Init] Class loaded. Facility Code set to: CAMPUS-MAIN
+Ticket 1: Ticket{id='CAMPUS-MAIN-1001', reg='KA01AA1111', settled=false}
+Ticket 2: Ticket{id='CAMPUS-MAIN-1002', reg='TN02BB2222', settled=false}
+Next global sequence will be: 1003
+
+--- 2. Object Reference Passing Semantics ---
+Before processTicket: Ticket{id='CAMPUS-MAIN-1001', reg='KA01AA1111', settled=false}
+Processing ticket: CAMPUS-MAIN-1001
+After processTicket: Ticket{id='CAMPUS-MAIN-1001', reg='KA01AA1111', settled=true}
+t1 is still reachable and not null in caller scope!
+
+--- 3. Garbage Collection Eligibility ---
+Setting t2 = null...
+The heap object formerly referenced by t2 is now eligible for Garbage Collection.
+
+--- 4. Multi-Gate Facility Instance Counters ---
+NORTH-GATE-TKT-0001 (Vehicle: TN01-CAR-1)
+NORTH-GATE-TKT-0002 (Vehicle: TN01-CAR-2)
+SOUTH-GATE-TKT-0001 (Vehicle: KA02-BIKE-1)
+NORTH-GATE-TKT-0003 (Vehicle: TN01-CAR-3)
+North Gate Total Issues: 3
+South Gate Total Issues: 1
