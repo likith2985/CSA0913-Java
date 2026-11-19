@@ -42,3 +42,19 @@
 * 📁 **[Q05](Assignment-3/Q05/)**: Race Conditions in Cinema Seat-Booking (`SeatBooking.java` Complete the Code; 100% double-booking reproduction).
 * 📁 **[Q06](Assignment-3/Q06/)**: Deadlock Lock-Ordering & Mess Token Counter (`TokenCounter.java` Complete the Code; bounds validation).
 * 📁 **[Q07](Assignment-3/Q07/)**: Concurrent, Fault-Tolerant Result Batch Processor (10,000 files in **16 ms** with 100% audit match).
+
+
+---
+
+### 📁 [Assignment-4/](Assignment-4/)
+**Title:** Event-Driven GUI Design, AWT & Swing Architectures, Layout Management, and GUI-JDBC Integration  
+**CO Coverage:** CO4 — Event-Driven Programming, Java AWT and Swing frameworks, Event Delegation Model, Component & Container hierarchies, Layout Managers (BorderLayout, FlowLayout, GridLayout), Graphics rendering pipeline, and Desktop GUI to JDBC Database integration.  
+**Total Marks:** 50  
+**Status:** Completed & Validated (Tasks 1–6)  
+* 📄 **[Assignment4_Report.md](Assignment-4/Assignment4_Report.md)**: Formal 50-mark submission report covering architectural defect reviews, event lifecycle traces vs applet lifecycle, layout resizing invariance across 3 resolutions, graphics repaint forensics, comparative evaluation of 4 event handling styles, and the Stage 1–5 Campus Event Registration Challenge.
+* 📁 **[Task01](Assignment-4/Task01/)**: GUI Design Review and Architectural Repair (`FeeWindowRepaired.java`, `FeeService.java`, SwingWorker off-EDT processing, SQL injection mitigation).
+* 📁 **[Task02](Assignment-4/Task02/)**: Outpatient Appointment Desk Event-Driven Design (`HospitalAppointmentDesk.java`, dynamic doctor catalog dropdowns, form validation, exit confirmation).
+* 📁 **[Task03](Assignment-4/Task03/)**: Campus Library Search Screen Nested Layouts and Resizing (`LibrarySearchScreen.java`, empirical validation at 500x350, 750x500, 1000x650 px).
+* 📁 **[Task04](Assignment-4/Task04/)**: Event-Handling Forensics & Drawing Persistence (`DrawPad.java` Complete the Code, typo fix, retained mode rendering inside `paint()`).
+* 📁 **[Task05](Assignment-4/Task05/)**: Four Event-Handling Styles & Converter Completion (`Converter.java` Complete the Code with Style (d) Lambda, Enter-key triggering, `JOptionPane` dialog).
+* 📁 **[Task06](Assignment-4/Task06/)**: Full-Stack Campus Event Registration Desktop Application (`EventRegistrationApp.java`, `RegistrationDAO.java`, `schema.sql`, menu bar, filterable `JTable`, async persistence, CSV export).
