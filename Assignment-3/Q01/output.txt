@@ -1,0 +1,29 @@
+﻿==========================================================================
+  Q1: BANK ATM FAILURE HANDLING & EXCEPTION TRACING
+==========================================================================
+
+--- Test 1: Valid Normal Withdrawal (Rs 1,500) ---
+[ATM SESSION START] Account: SB-9876543210 | Current Balance: Rs 5000.00
+  >> [DISPENSE SUCCESS] Dispensed: Rs 1500.00 | Remaining Balance: Rs 3500.00
+  [FINALLY GUARANTEE]: Card ejected safely. Session closed for SB-9876543210.
+--------------------------------------------------------------------------
+--- Test 2: Non-numeric Input ('FiveHundred') ---
+[ATM SESSION START] Account: SB-9876543210 | Current Balance: Rs 3500.00
+  [CATCH 2 - INVALID INPUT ERROR]: Invalid numeric format for withdrawal amount: 'FiveHundred'
+  [FINALLY GUARANTEE]: Card ejected safely. Session closed for SB-9876543210.
+--------------------------------------------------------------------------
+--- Test 3: Negative Withdrawal Amount (-200.00) ---
+[ATM SESSION START] Account: SB-9876543210 | Current Balance: Rs 3500.00
+  [CATCH 2 - INVALID INPUT ERROR]: Withdrawal amount must be strictly positive. Entered: -200.0
+  [FINALLY GUARANTEE]: Card ejected safely. Session closed for SB-9876543210.
+--------------------------------------------------------------------------
+--- Test 4: Overdraft Attempt (Requested Rs 10,000 with Balance Rs 3,500) ---
+[ATM SESSION START] Account: SB-9876543210 | Current Balance: Rs 3500.00
+  [CATCH 3 - BUSINESS RULE ERROR]: Insufficient balance! Requested: Rs 10000.00, Available: Rs 3500.00 (Shortfall: Rs 6500.00)
+  [FINALLY GUARANTEE]: Card ejected safely. Session closed for SB-9876543210.
+--------------------------------------------------------------------------
+--- Test 5: Missing Card File ('corrupted_slot.dat') ---
+[ATM SESSION START] Account: SB-9876543210 | Current Balance: Rs 3500.00
+  [CATCH 1 - HARDWARE/FILE ERROR]: Card reader data file missing: corrupted_slot.dat
+  [FINALLY GUARANTEE]: Card ejected safely. Session closed for SB-9876543210.
+--------------------------------------------------------------------------
