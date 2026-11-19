@@ -1,0 +1,24 @@
+﻿==========================================================================
+  Q7: CONCURRENT, FAULT-TOLERANT SEMESTER RESULT PROCESSOR (10,000 FILES)
+==========================================================================
+
+--- 1. Thread Pool Scalability Benchmark (10,000 Files) ---
+  [Thread Pool Size: 1] Processed 10,000 total files in  60.00 ms
+    >> Successes: 9,200 | Missing: 300 | Corrupt: 400 | Invalid: 100
+    Throughput Speedup: 1.00x
+
+  [Thread Pool Size: 2] Processed 10,000 total files in  17.00 ms
+    >> Successes: 9,200 | Missing: 300 | Corrupt: 400 | Invalid: 100
+    Throughput Speedup: 3.53x
+
+  [Thread Pool Size: 4] Processed 10,000 total files in  17.00 ms
+    >> Successes: 9,200 | Missing: 300 | Corrupt: 400 | Invalid: 100
+    Throughput Speedup: 3.53x
+
+  [Thread Pool Size: 8] Processed 10,000 total files in  16.00 ms
+    >> Successes: 9,200 | Missing: 300 | Corrupt: 400 | Invalid: 100
+    Throughput Speedup: 3.75x
+
+--- 2. Hand-Checked Set Verification (10,000 Files) ---
+Expected Injected Numbers: 9,200 Successes | 400 Corrupt | 300 Missing | 100 Invalid
+Verification Status: 100% AUDIT RECONCILIATION MATCH!
