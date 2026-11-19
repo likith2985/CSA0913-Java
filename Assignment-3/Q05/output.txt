@@ -1,0 +1,24 @@
+﻿==========================================================================
+  Q5: CINEMA SEAT BOOKING - RACE CONDITIONS & SYNCHRONIZATION STRATEGIES
+==========================================================================
+
+--- 1. Unsynchronized Execution (10 Runs) - Tracking Double Bookings ---
+  Run #01: Seats sold: 14 / 10 >> [DOUBLE BOOKING DISASTER!]
+  Run #02: Seats sold: 14 / 10 >> [DOUBLE BOOKING DISASTER!]
+  Run #03: Seats sold: 29 / 10 >> [DOUBLE BOOKING DISASTER!]
+  Run #04: Seats sold: 13 / 10 >> [DOUBLE BOOKING DISASTER!]
+  Run #05: Seats sold: 31 / 10 >> [DOUBLE BOOKING DISASTER!]
+  Run #06: Seats sold: 15 / 10 >> [DOUBLE BOOKING DISASTER!]
+  Run #07: Seats sold: 32 / 10 >> [DOUBLE BOOKING DISASTER!]
+  Run #08: Seats sold: 23 / 10 >> [DOUBLE BOOKING DISASTER!]
+  Run #09: Seats sold: 43 / 10 >> [DOUBLE BOOKING DISASTER!]
+  Run #10: Seats sold: 43 / 10 >> [DOUBLE BOOKING DISASTER!]
+Overbooked Runs: 10 / 10
+
+--- 2. Synchronized Method Verification ---
+Seats sold: 10 / 10 (Guaranteed Zero Double-Booking)
+
+--- 3. Throughput Benchmark: 10,000 Contended Bookings ---
+1. Synchronized Method (Whole Method Lock):  1308.70 ms (Seats: 100)
+2. Synchronized Block  (Fine-Grained Lock):  2469.24 ms (Seats: 100)
+3. Lock-Free AtomicBoolean.compareAndSet():  3576.39 ms (Seats: 100)
