@@ -1,0 +1,20 @@
+﻿==========================================================================
+  Q2: ONLINE EXAM PORTAL - USER EXCEPTIONS & MULTI-LAYER PROPAGATION
+==========================================================================
+
+--- Scenario 1: Valid Normal Submission ---
+Incoming submission from STU-1001 (file: ans_1001.pdf, size: 320 KB)...
+    [Storage Layer] Persisted ans_1001.pdf (320 KB) to disk.
+Response to Student: HTTP 200 OK: Your answer script was accepted and safely recorded.
+
+--- Scenario 2: Late Submission ---
+Incoming submission from STU-1001 (file: ans_late.pdf, size: 250 KB)...
+Response to Student: HTTP 403 FORBIDDEN: [Exam Closed] Submission window closed at 2026-11-20T12:00. Attempted at: 2026-11-20T12:15
+
+--- Scenario 3: Unregistered Student ---
+Incoming submission from STU-9999 (file: ans_9999.pdf, size: 180 KB)...
+Response to Student: HTTP 401 UNAUTHORIZED: [Not Registered] Student STU-9999 is not registered for this course examination!
+
+--- Scenario 4: Storage Quota Exceeded (Chained Exception) ---
+Incoming submission from STU-1002 (file: huge_ans.pdf, size: 950 KB)...
+Response to Student: HTTP 500 SERVER ERROR: [Storage Issue] File store rejected script for student STU-1002 (Underlying Cause: Storage volume full: Disk quota exceeded for block /var/exams)
